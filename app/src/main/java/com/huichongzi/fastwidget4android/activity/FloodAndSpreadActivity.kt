@@ -20,9 +20,9 @@ class FloodAndSpreadActivity : Activity() {
 
     fun init(){
         val height: Int = window.windowManager.defaultDisplay.height
-        var floodWrapper = ViewWrapper(animation_content)
-        var spreadWrapper = ViewWrapper(spread_view)
-        var floodAnimation = ObjectAnimator.ofInt(floodWrapper, "height", height)
+        val floodWrapper = ViewWrapper(animation_content)
+        val spreadWrapper = ViewWrapper(spread_view)
+        val floodAnimation = ObjectAnimator.ofInt(floodWrapper, "height", height)
         floodAnimation.duration = 1000
         floodAnimation.start()
         floodAnimation.addListener(object: Animator.AnimatorListener{
@@ -36,6 +36,7 @@ class FloodAndSpreadActivity : Activity() {
             }
 
             override fun onAnimationEnd(p0: Animator?) {
+                // ObjectAnimator height 变化的启始值 是对应的getHeight 返回的值
                 ObjectAnimator.ofInt(spreadWrapper, "height", height).setDuration(1000).start()
             }
         })

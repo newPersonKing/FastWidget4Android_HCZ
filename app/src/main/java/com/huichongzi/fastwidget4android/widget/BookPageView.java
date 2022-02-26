@@ -295,7 +295,7 @@ public class BookPageView extends View implements AnimationViewInterface {
 
     @Override
     public void setAnimationPercent(float percent, MotionEvent event, boolean isVertical) {
-        setBackgroundDrawable(new BitmapDrawable(mBackBitmap));
+        setBackground(new BitmapDrawable(null,mBackBitmap));
         mTouchAction = event.getAction();
         mTouchX = (int)event.getX();
         mTouchY = (int)event.getY();

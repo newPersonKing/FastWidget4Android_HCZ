@@ -3,8 +3,8 @@ package com.huichongzi.fastwidget4android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -61,6 +61,7 @@ public class ScrollFoldActivity extends Activity {
 		int firstVisibleIndex = linearLayoutManager.findFirstVisibleItemPosition();
 		ViewGroup first = (ViewGroup) linearLayoutManager.findViewByPosition(firstVisibleIndex);
 		int firstVisibleOffset = -first.getTop();
+		// 偏移量
 		int changeheight = (int) (firstVisibleOffset * (ScrollFoldAdapter.ITEM_CONTENT_TEXT_SCALE - 1));
 
 		// 减少当前展示的第一个item的高度。

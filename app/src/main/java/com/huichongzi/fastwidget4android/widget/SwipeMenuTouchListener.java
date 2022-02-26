@@ -1,6 +1,6 @@
 package com.huichongzi.fastwidget4android.widget;
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -20,7 +20,7 @@ public class SwipeMenuTouchListener implements RecyclerView.OnItemTouchListener{
 
     @Override
     public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
-
+         // 知识点：获取在这个触摸点下面的child
         View child = rv.findChildViewUnder(e.getX(), e.getY());
         if(child == null){
             return false;
